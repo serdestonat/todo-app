@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -18,12 +18,100 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: fixed(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: #1b4747;
+  padding: 0;
+}
+nav a {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 490;
+}
+
+.addimage {
+  padding-right: 3px;
+}
+
+.input {
+  display: flex;
+  width: 90%;
+  border: 2px solid #1b4747;
+  border-radius: 4px;
+  max-height: 50px;
+  padding-left: 5px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  border-color: #1b4747;
+  border-radius: 7px;
+}
+
+.idk {
+  display: center;
+  justify-content: center;
+  border: 2px solid #1b4747;
+  color: #1b4747;
+  align-items: center;
+  border-radius: 7px;
+  padding: 3px 7px;
+  font-size: 30px;
+}
+
+.idk li {
+  color: #fff;
+  background: #1b4747;
+  margin: 4px 0 4px 0;
+  padding: 0 6px;
+  border-radius: 5px;
+}
+
+.idk li button {
+  float: right;
+  width: 25px;
+  height: 25px;
+  margin: 8px 8px 0 0;
+}
+
+.idk li button img {
+  float: right;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.idk li button.checkIcon {
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+.idk li button.checkIcon img {
+  display: none;
+}
+
+.idk li.completed {
+  background: grey;
+}
+
+.idk li.completed button.checkIcon img {
+  display: inline-block;
+}
+
+.tasks {
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  padding: 25px;
 }
 
 @layer utilities {
